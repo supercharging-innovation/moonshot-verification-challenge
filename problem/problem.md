@@ -25,10 +25,10 @@ A system must chemically or physically detach and disperse **resilient, self-ren
 
 These are real numbers the client's formulation scientists will cite. Any proposed mechanism that violates them is dead on arrival.
 
-> **Before moving past this section, internalize this number.** Biofilm removal requires **≥45 Pa** of wall shear stress. A normal mouth-rinse generates **~0.02–0.076 Pa**. That is a **500–2000× gap**, and it is the single most common place where concepts in this space collapse on contact with physics. Any concept that relies on mechanical force at the interdental gap has to explain, quantitatively, how it closes that gap — confinement, jamming, pressure amplification, something. Concepts that clean chemically rather than mechanically do not have to close the gap, but then they owe the reader a credible chemical story instead.
+The biggest of them is a shear-stress gap. Biofilm removal requires **≥45 Pa** of wall shear stress, with complete removal around **135 Pa** (Hotić et al. 2024 and related biofilm rheology literature; verify these yourself). A normal mouth-rinse generates only **~0.02–0.076 Pa**. That is a 500–2000× gap, and it is the single most common place where concepts in this space collapse on contact with physics. Any concept that relies on mechanical force at the interdental gap has to explain, quantitatively, how it closes that gap — confinement, jamming, pressure amplification, something. Concepts that clean chemically rather than mechanically do not have to close the gap, but they owe the reader a credible chemical story instead.
 
-- **Biofilm shear-stress threshold.** Significant plaque removal requires **≥45 Pa** of wall shear stress; complete removal ~**135 Pa** (Hotić et al. 2024 and related biofilm rheology literature). Verify this yourself.
-- **Swishing baseline.** Normal mouth-rinsing generates only **~0.02–0.076 Pa** of wall shear stress. A 500–2000× gap. Any solution that relies on rinse hydrodynamics alone needs an amplification mechanism.
+Other constraints worth respecting:
+
 - **Particle grittiness threshold.** Particles larger than ~50 μm at volume fractions above ~50% feel gritty and get rejected by consumers. This is a sensory / compliance constraint, not a physics one, but it kills products.
 - **Microbead Act compliance (US, 2015).** Non-biodegradable plastic microbeads in rinse-off oral care are banned. Any particle-based approach must use a biodegradable, non-plastic particle.
 - **Antimicrobial compatibility.** The three major oral antimicrobials — stannous fluoride (SnF₂), cetylpyridinium chloride (CPC), chlorhexidine (CHX) — are all ionic and can bind anionic polymers like alginate. Any carrier chemistry must be audited for depletion/crosslinking side effects.

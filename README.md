@@ -6,12 +6,12 @@
   <p><strong>A practical assignment for engineers who want to build rigorous agentic systems.</strong></p>
 
   <p>
-    <a href="#how-to-apply"><strong>How to apply →</strong></a>
+    <a href="#how-to-submit"><strong>How to submit →</strong></a>
     &nbsp;·&nbsp;
     <a href="mailto:vikram@analogicalengines.com">vikram@analogicalengines.com</a>
   </p>
 
-  <p><sub><strong>Submissions close: 10 May 2026.</strong></sub></p>
+  <p><sub><strong>Submissions close 10 May 2026. We reply within 10 business days.</strong></sub></p>
 </div>
 
 ---
@@ -61,7 +61,7 @@ Every non-trivial claim in the dossier must trace back to a real source — a pa
 - **LLM-provider agnostic, runtime-configurable.** See [Configuration and provider-agnostic design](#configuration-and-provider-agnostic-design) below.
 - **Bring your own keys.** We do not issue API keys. Your system should read all credentials from environment variables, and your submission's `README.md` should list exactly which env vars we need to set. (A `.env.example` is welcome.)
 - **Reproducible install.** A clean clone and one setup command should run it on a fresh machine.
-- **Production-grade code.** This is not a throwaway script. Write it as you would at a job: clear module structure, sensible separation of concerns, types where they help, error handling where it matters, logs where a future maintainer will want them, no committed secrets, no dead code. We eventually turn the winning architectures into production pipelines — yours may be one of them.
+- **Production-grade code.** Write it as if someone — or something — will read and extend it without talking to you. Increasingly that someone is an AI coding agent working only from your code, not a human reading your notes. Clear module boundaries, typed interfaces, explicit error handling, sensible logging, no committed secrets, no dead code. The system should also be **robust** — it keeps going when a search returns garbage, a provider rate-limits, or a paper can't be fetched — and **scalable**, in the sense that if we pointed it at 100 concepts instead of 2, it wouldn't silently fall over. Winning architectures become real production pipelines; yours may be one of them.
 
 ### Free to choose
 
@@ -91,31 +91,42 @@ A good submission is typically in the low single-digit dollars per dossier. If y
 
 ## Deliverables
 
-Commit the following into the private submission repo we invite you to (see [How to apply](#how-to-apply)).
+You submit by emailing us a zip (see [How to submit](#how-to-submit)). Everything below should be inside that zip — a single self-contained directory we can unzip, read, and run from.
 
 ### 1. The code
 
 Your complete agentic system. Prompts in their own files (YAML / Markdown / JSON) — not buried in string literals inside Python.
 
-### 2. Two dossiers
+### 2. `README.md` — how to set up and run your submission
+
+A README at the root of your submission, written for a reviewer who has never seen your code before and is going to run it from a fresh checkout. At a minimum:
+
+- Install steps for a clean machine (`pip install -r requirements.txt`, `uv sync`, `npm ci`, whatever).
+- The exact command(s) to produce each dossier end-to-end.
+- Which environment variables the code reads, and what each is for. A `.env.example` is welcome.
+- A **"How to switch providers"** section with a concrete, copy-pasteable example — at minimum, what to change in your `config.json` (or equivalent) to run the same pipeline end-to-end on a second provider.
+
+Assume the reviewer is competent but not psychic.
+
+### 3. Two dossiers
 
 - `output/solution_A.md`
 - `output/solution_B.md`
 
 The product of running your system on each concept. Well-formatted Markdown. Every question in [`deliverables/DOSSIER_QUESTIONS.md`](deliverables/DOSSIER_QUESTIONS.md) must be answered. **Structure is entirely your call.** We are grading content, not adherence to a template — how you organize the dossier is itself a signal.
 
-### 3. `DESIGN.md` — your rationale
+### 4. `DESIGN.md` — your rationale
 
 How does your system work, and why? What did you consider and reject? How did you verify your own outputs are correct? Where do you think the system still has blind spots? This is the document we read most closely.
 
-### 4. `PROCESS.md` — how you built it
+### 5. `PROCESS.md` — how you built it
 
 - Which coding assistant(s) you used, and how you used them.
 - What they got right, what they got wrong, what you had to fix yourself.
 - Time spent, end-to-end.
 - Challenges you hit and how you got unstuck.
 
-### 5. `output/metrics.json` — the run
+### 6. `output/metrics.json` — the run
 
 Per-dossier run statistics, in the schema below. Honor system; we spot-check.
 
@@ -152,7 +163,7 @@ Per-dossier run statistics, in the schema below. Honor system; we spot-check.
 
 If a field does not apply to your setup (e.g., no reasoning tokens), use `0` or `null` — don't omit it.
 
-### 6. (Optional) Screen recording
+### 7. (Optional) Screen recording
 
 A timelapse or walkthrough of you building this — including how you worked with your coding assistant. Loom, YouTube unlisted, or a Drive link pasted into `PROCESS.md`. Optional, but submissions with recordings are weighted higher.
 
@@ -177,7 +188,7 @@ Everything below rolls up to those three. Submissions are scored on:
 | **Dossier structure** | You chose the structure — does it serve the reader? Does it stand up as a coherent document, or read like a question-by-question form? |
 | **Code quality** | Is this production-grade? Would we be comfortable merging it into a real pipeline? |
 | **Provider-agnostic discipline** | Does the system actually work when we swap the model — or does it quietly break? |
-| **Coding-assistant fluency (`PROCESS.md`)** | Do we get a faithful, specific account of what your assistant did well, what it got wrong, what bugs you hit, and how you got unstuck? |
+| **Coding-assistant fluency (`PROCESS.md`)** | Do we get a specific, honest account of what your assistant got right, what it got wrong, what bugs came out of that, and how you worked past them? |
 | **LLM-systems judgment (`DESIGN.md`)** | Does your rationale read like someone with a point of view on building these systems, or like someone who followed a recipe? |
 
 Cheap-and-shallow and expensive-and-padded both lose. We want the tightest, most rigorous system you can build — and a faithful account of how you built it.
@@ -196,17 +207,19 @@ If you join us, you build the next version of this. You work directly on the sys
 
 If you don't join us — because the fit isn't right, or because you take something else — you still walk away with a rigorous agentic system in your portfolio, a screen recording of you using modern coding assistants at their best, and a concrete point of view on how LLM-based systems should be designed. That's worth the weekend by itself.
 
-## How to apply
+## How to submit
 
-This repo is the public challenge brief. Submissions are not made here — they are made in a private per-candidate repo we invite you to.
+This repo is the public challenge brief — read it, build against it, submit when ready.
 
-1. Email **[vikram@analogicalengines.com](mailto:vikram@analogicalengines.com)** with:
-    - Your name
-    - Your GitHub username
-    - One line on how you heard about the challenge
-2. We will invite you to a private submission repo under the Analogical Engines hiring org.
-3. Clone that repo, build your submission inside it, and push.
-4. Email us when you're done. No tag-and-release ceremony needed — the most recent commit on `main` is what we grade.
+1. Zip your submission directory (everything listed under [Deliverables](#deliverables) — code, dossiers, `DESIGN.md`, `PROCESS.md`, `metrics.json`, your `README.md`, and a `config.json` if you use one).
+2. Email the zip to **[vikram@analogicalengines.com](mailto:vikram@analogicalengines.com)**. Include:
+    - Your name and, if you'd like, your GitHub profile
+    - One or two lines about yourself — what you're working on, where you heard about the challenge
+    - Your screen-recording link, if you made one (or paste it in `PROCESS.md`)
+3. **Make sure we can run it.** The most common self-own is a submission we can't reproduce. Before zipping, unzip your own file into a fresh directory, follow your own README, and confirm it runs end-to-end.
+4. We will reply within **10 business days** of receiving your email.
+
+If your zip is too large for email (large lockfiles, model caches you forgot to exclude, screen recording), send a Drive / Dropbox / WeTransfer link instead. No model weights, no `.venv`, no `node_modules`, no real secrets.
 
 Please keep your work and this challenge's details confidential until we tell you the round has closed.
 
