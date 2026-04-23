@@ -8,10 +8,10 @@
   <p>
     <a href="#how-to-submit"><strong>How to submit →</strong></a>
     &nbsp;·&nbsp;
-    <a href="mailto:vikram@analogicalengines.com">vikram@analogicalengines.com</a>
+    <a href="mailto:challenge@analogicalengines.com">challenge@analogicalengines.com</a>
   </p>
 
-  <p><sub><strong>Submissions close 10 May 2026. We reply within 10 business days.</strong></sub></p>
+  <p><sub><strong>Submissions close 10 May 2026, 11:59pm ET. We reply with a decision within 10 business days.</strong></sub></p>
 </div>
 
 ---
@@ -173,7 +173,7 @@ If a field does not apply to your setup (e.g., no reasoning tokens), use `0` or 
 
 ### 9. (Optional) Screen recording
 
-A timelapse or walkthrough of you building this — including how you worked with your coding assistant. Loom, YouTube unlisted, or a Drive link pasted into `PROCESS.md`. Optional, but submissions with recordings are weighted higher.
+A timelapse or walkthrough of you building this — including how you worked with your coding assistant. Loom, YouTube unlisted, or a Drive link. Paste the link at the top of `PROCESS.md`. Optional, but submissions with recordings are weighted higher.
 
 ## What we are evaluating you for
 
@@ -220,29 +220,28 @@ If you don't join us — because the fit isn't right, or because you take someth
 This repo is the public challenge brief — read it, build against it, submit when ready.
 
 1. Zip your submission directory. It should contain, at minimum: your source code, `README.md`, `config.json`, `.env.example`, `DESIGN.md`, `PROCESS.md`, and an `output/` folder holding `solution_A.md`, `solution_B.md`, and `metrics.json`. See [Deliverables](#deliverables) for details.
-2. Email the zip to **[vikram@analogicalengines.com](mailto:vikram@analogicalengines.com)**. Include:
+2. Email the zip to **[challenge@analogicalengines.com](mailto:challenge@analogicalengines.com)** with the subject line **`Verification Challenge Submission — <Your Name>`**. Include in the body:
     - Your name and, if you'd like, your GitHub profile
     - One or two lines about yourself — what you're working on, where you heard about the challenge
-    - Your screen-recording link, if you made one (or paste it in `PROCESS.md`)
-3. **Make sure we can run it.** The most common self-own is a submission we can't reproduce. Before zipping, unzip your own file into a fresh directory, follow your own README, and confirm it runs end-to-end.
-4. We will reply within **10 business days** of receiving your email.
-
-If your zip is too large for email (large lockfiles, model caches you forgot to exclude, screen recording), send a Drive / Dropbox / WeTransfer link instead. No model weights, no `.venv`, no `node_modules`, no real secrets.
+3. **If the zip is over 25 MB**, don't attach it — link to it from the email instead. A Drive / Dropbox / WeTransfer link or a private GitHub repo you've shared with us all work. The email itself is still required; we only track submissions that arrive in our inbox. No model weights, no `.venv`, no `node_modules`, no real secrets.
+4. **Make sure we can run it.** The most common self-own is a submission we can't reproduce. Before zipping, unzip your own file into a fresh directory, follow your own README, and confirm it runs end-to-end.
+5. **Resubmissions are fine** as long as they arrive before the deadline. Reply on the same email thread with the new zip or link so we grade the latest version.
+6. We will reply with a decision within **10 business days** of receiving your email. No separate acknowledgement — the decision email is the reply.
 
 Please keep your work and this challenge's details confidential until we tell you the round has closed.
 
 ## Deadline
 
-**Submissions close on 10 May 2026.** Earlier is fine and often better — we review in rolling batches.
+**Submissions close 10 May 2026 at 11:59pm ET.** Earlier is fine and often better — we review in rolling batches.
 
 Spend as little or as much of that window as you like. We measure judgment per hour, not hours. Report your actual time honestly in `PROCESS.md`.
 
 ## Questions
 
-If anything in the brief is genuinely ambiguous, email **[vikram@analogicalengines.com](mailto:vikram@analogicalengines.com)**. We would rather clarify than have you guess.
+If anything in the brief is genuinely ambiguous, email **[challenge@analogicalengines.com](mailto:challenge@analogicalengines.com)**. We would rather clarify than have you guess.
 
 ---
 
 <div align="center">
-  <sub>© Analogical Engines · <a href="mailto:vikram@analogicalengines.com">vikram@analogicalengines.com</a></sub>
+  <sub>© Analogical Engines · <a href="mailto:challenge@analogicalengines.com">challenge@analogicalengines.com</a></sub>
 </div>
