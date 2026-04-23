@@ -59,7 +59,7 @@ Every non-trivial claim in the dossier must trace back to a real source — a pa
 - **Live web search.** The system consults the open web — news, company pages, product pages, patent offices — not just the model's training data.
 - **Academic / paper search.** The system consults a scientific corpus. Every scientific claim of consequence should cite a real paper. *Which corpus, and how — your call. Part of the challenge is picking the right tools.*
 - **LLM-provider agnostic, runtime-configurable.** See [Configuration and provider-agnostic design](#configuration-and-provider-agnostic-design) below.
-- **Bring your own keys.** We do not issue API keys. Your system should read all credentials from environment variables, and your submission's `README.md` should list exactly which env vars we need to set. (A `.env.example` is welcome.)
+- **Bring your own keys.** We do not issue API keys. Your system must read all credentials from environment variables. Ship a `.env.example` at the root of your submission listing every variable your code reads (names only, no real values), and have your `README.md` explain what each is for.
 - **Reproducible install.** A clean clone and one setup command should run it on a fresh machine.
 - **Production-grade code.** Write it as if someone — or something — will read and extend it without talking to you. Increasingly that someone is an AI coding agent working only from your code, not a human reading your notes. Clear module boundaries, typed interfaces, explicit error handling, sensible logging, no committed secrets, no dead code. The system should also be **robust** — it keeps going when a search returns garbage, a provider rate-limits, or a paper can't be fetched — and **scalable**, in the sense that if we pointed it at 100 concepts instead of 2, it wouldn't silently fall over. Winning architectures become real production pipelines; yours may be one of them.
 
@@ -74,10 +74,10 @@ Every non-trivial claim in the dossier must trace back to a real source — a pa
 
 Your system must let us swap the LLM backend at runtime without code changes. Concretely:
 
-- A single configuration file in the repo root — `config.json` (or `.yaml`, same spirit) — drives which provider / model each part of your system uses.
-- Running `<your-entry-point> --config config.alt.json solutions/solution_A.md` (or your equivalent) should work with a different config without any source edits.
-- Your submission's `README.md` must include a short **"How to switch providers"** section with a concrete example — at minimum, what to change in `config.json` to run the same pipeline end-to-end on a second provider.
-- Your submission's `README.md` must also include a **"How to run"** section with the exact command(s) to reproduce each dossier from a clean clone.
+- A `config.json` at the root of your submission drives which provider and model each part of your system uses. Its shape is your design decision — we care that it exists, that it covers every model call in your pipeline, and that your `README.md` documents it.
+- Running your entry point with a different config file (for example, `--config config.alt.json`) should work without any source edits.
+- Your submission's `README.md` must include a **"How to switch providers"** section with a concrete example — at minimum, what to change in `config.json` to run the same pipeline end-to-end on a second provider.
+- Your submission's `README.md` must also include a **"How to run"** section with the exact command(s) to reproduce each dossier from a clean install.
 
 We will run your system against at least two providers at grading time. If it only works with one, that's a score hit.
 
@@ -99,34 +99,42 @@ Your complete agentic system. Prompts in their own files (YAML / Markdown / JSON
 
 ### 2. `README.md` — how to set up and run your submission
 
-A README at the root of your submission, written for a reviewer who has never seen your code before and is going to run it from a fresh checkout. At a minimum:
+A README at the root of your submission, written for a reviewer who has never seen your code before and is going to run it from a fresh install. At a minimum:
 
 - Install steps for a clean machine (`pip install -r requirements.txt`, `uv sync`, `npm ci`, whatever).
 - The exact command(s) to produce each dossier end-to-end.
-- Which environment variables the code reads, and what each is for. A `.env.example` is welcome.
-- A **"How to switch providers"** section with a concrete, copy-pasteable example — at minimum, what to change in your `config.json` (or equivalent) to run the same pipeline end-to-end on a second provider.
+- Which environment variables the code reads (pointing at your `.env.example`), and what each is for.
+- A **"How to switch providers"** section with a concrete, copy-pasteable example — what to change in `config.json` to run the same pipeline end-to-end on a second provider.
 
 Assume the reviewer is competent but not psychic.
 
-### 3. Two dossiers
+### 3. `config.json` — the runtime configuration
+
+A single JSON file at the root of your submission that drives which provider and model each part of your system uses. Shape is your design decision, but every model call in your pipeline should be reachable from this file, and the file should be swappable at runtime without code changes.
+
+### 4. `.env.example` — the secrets contract
+
+A file at the root listing every environment variable your code reads, with names only and no real values. One line per variable, with a short comment explaining what it is and where to get it.
+
+### 5. Two dossiers
 
 - `output/solution_A.md`
 - `output/solution_B.md`
 
 The product of running your system on each concept. Well-formatted Markdown. Every question in [`deliverables/DOSSIER_QUESTIONS.md`](deliverables/DOSSIER_QUESTIONS.md) must be answered. **Structure is entirely your call.** We are grading content, not adherence to a template — how you organize the dossier is itself a signal.
 
-### 4. `DESIGN.md` — your rationale
+### 6. `DESIGN.md` — your rationale
 
 How does your system work, and why? What did you consider and reject? How did you verify your own outputs are correct? Where do you think the system still has blind spots? This is the document we read most closely.
 
-### 5. `PROCESS.md` — how you built it
+### 7. `PROCESS.md` — how you built it
 
 - Which coding assistant(s) you used, and how you used them.
 - What they got right, what they got wrong, what you had to fix yourself.
 - Time spent, end-to-end.
 - Challenges you hit and how you got unstuck.
 
-### 6. `output/metrics.json` — the run
+### 8. `output/metrics.json` — the run
 
 Per-dossier run statistics, in the schema below. Honor system; we spot-check.
 
@@ -163,7 +171,7 @@ Per-dossier run statistics, in the schema below. Honor system; we spot-check.
 
 If a field does not apply to your setup (e.g., no reasoning tokens), use `0` or `null` — don't omit it.
 
-### 7. (Optional) Screen recording
+### 9. (Optional) Screen recording
 
 A timelapse or walkthrough of you building this — including how you worked with your coding assistant. Loom, YouTube unlisted, or a Drive link pasted into `PROCESS.md`. Optional, but submissions with recordings are weighted higher.
 
@@ -211,7 +219,7 @@ If you don't join us — because the fit isn't right, or because you take someth
 
 This repo is the public challenge brief — read it, build against it, submit when ready.
 
-1. Zip your submission directory (everything listed under [Deliverables](#deliverables) — code, dossiers, `DESIGN.md`, `PROCESS.md`, `metrics.json`, your `README.md`, and a `config.json` if you use one).
+1. Zip your submission directory. It should contain, at minimum: your source code, `README.md`, `config.json`, `.env.example`, `DESIGN.md`, `PROCESS.md`, and an `output/` folder holding `solution_A.md`, `solution_B.md`, and `metrics.json`. See [Deliverables](#deliverables) for details.
 2. Email the zip to **[vikram@analogicalengines.com](mailto:vikram@analogicalengines.com)**. Include:
     - Your name and, if you'd like, your GitHub profile
     - One or two lines about yourself — what you're working on, where you heard about the challenge
