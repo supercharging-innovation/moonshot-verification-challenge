@@ -8,7 +8,7 @@
   <p>
     <a href="#how-to-submit"><strong>How to submit →</strong></a>
     &nbsp;·&nbsp;
-    <a href="mailto:challenge@analogicalengines.com">challenge@analogicalengines.com</a>
+    <a href="mailto:moonshot-verification-challenge-01@analogicalengines.com">moonshot-verification-challenge-01@analogicalengines.com</a>
   </p>
 
   <p><sub><strong>Submissions close 10 May 2026, 11:59pm ET. We reply with a decision within 10 business days.</strong></sub></p>
@@ -220,7 +220,7 @@ If you don't join us — because the fit isn't right, or because you take someth
 This repo is the public challenge brief — read it, build against it, submit when ready.
 
 1. Zip your submission directory. It should contain, at minimum: your source code, `README.md`, `config.json`, `.env.example`, `DESIGN.md`, `PROCESS.md`, and an `output/` folder holding `solution_A.md`, `solution_B.md`, and `metrics.json`. See [Deliverables](#deliverables) for details.
-2. Email the zip to **[challenge@analogicalengines.com](mailto:challenge@analogicalengines.com)** with the subject line **`Verification Challenge Submission — <Your Name>`**. Include in the body:
+2. Email the zip to **[moonshot-verification-challenge-01@analogicalengines.com](mailto:moonshot-verification-challenge-01@analogicalengines.com)** with the subject line **`Verification Challenge Submission — <Your Name>`**. Include in the body:
     - Your name and, if you'd like, your GitHub profile
     - One or two lines about yourself — what you're working on, where you heard about the challenge
 3. **If the zip is over 25 MB**, don't attach it — link to it from the email instead. A Drive / Dropbox / WeTransfer link or a private GitHub repo you've shared with us all work. The email itself is still required; we only track submissions that arrive in our inbox. No model weights, no `.venv`, no `node_modules`, no real secrets.
@@ -238,10 +238,10 @@ Spend as little or as much of that window as you like. We measure judgment per h
 
 ## Questions
 
-If anything in the brief is genuinely ambiguous, email **[challenge@analogicalengines.com](mailto:challenge@analogicalengines.com)**. We would rather clarify than have you guess.
+If anything in the brief is genuinely ambiguous, email **[moonshot-verification-challenge-01@analogicalengines.com](mailto:moonshot-verification-challenge-01@analogicalengines.com)**. We would rather clarify than have you guess.
 
 ---
 
 <div align="center">
-  <sub>© Analogical Engines · <a href="mailto:challenge@analogicalengines.com">challenge@analogicalengines.com</a></sub>
+  <sub>© Analogical Engines · <a href="mailto:moonshot-verification-challenge-01@analogicalengines.com">moonshot-verification-challenge-01@analogicalengines.com</a></sub>
 </div>
