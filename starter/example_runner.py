@@ -1,11 +1,17 @@
 """
-Vanilla one-shot runner — the floor, not the target.
+THIS IS A MINIMAL EXAMPLE, NOT A TEMPLATE.
 
-Reads the problem markdown and a solution markdown, interpolates them into the
-weak starter prompt, makes one LLM call, and dumps the raw response. No tools,
-no evidence checking, no evaluator, no structured output.
+It shows the simplest possible shape of a one-shot pipeline: read the problem
+file, read one concept file, interpolate them into a prompt, make a single LLM
+call. That's it. No tools, no web search, no paper search, no agent loop, no
+structured output.
 
-A good submission replaces this entire file with a real agentic system.
+Your submission should NOT look like a longer version of this file. Throw it
+out and build your own system — different entry point, different structure,
+different everything.
+
+This file is kept here only so you can sanity-check that the repo layout and
+concept files are what you expect before you start building.
 """
 
 import argparse
@@ -40,14 +46,15 @@ def build_messages(solution_path: pathlib.Path) -> list[dict]:
 
 def call_llm(messages: list[dict]) -> str:
     """
-    Placeholder. Wire this to whatever LLM you want — Anthropic, OpenAI,
-    Google, local. This is the only part of the starter you *must* replace.
+    Intentionally unwired. Your system will pick its own provider(s). This
+    placeholder just reports what it received so you can confirm the inputs
+    are shaped the way you expect.
     """
     raise NotImplementedError(
-        f"Wire this to an LLM provider. Received {len(messages)} messages "
-        f"totaling {sum(len(m['content']) for m in messages)} characters. "
-        "The starter is intentionally not hard-coded to any vendor — your "
-        "submission should support multiple."
+        f"Received {len(messages)} messages totaling "
+        f"{sum(len(m['content']) for m in messages)} characters. "
+        "Wire this to an LLM provider — or, better, throw this file out and "
+        "build your own system."
     )
 
 

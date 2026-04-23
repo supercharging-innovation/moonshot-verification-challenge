@@ -1,17 +1,17 @@
-# Vanilla starter prompt — intentionally weak.
+# ─────────────────────────────────────────────────────────────────────────────
+# THIS IS A MINIMAL EXAMPLE, NOT A TEMPLATE.
 #
-# This is the floor, not a baseline to match. It is a one-shot prompt that
-# hands the whole job to an LLM in a single call, with no tools, no agent
-# loop, no evidence gating, no failure-mode enumeration, no prior-art search,
-# and no evaluator.
+# It exists only to show how the problem and solution files are loaded into a
+# single LLM call. It has no tools, no web search, no paper search, no agent
+# loop, no structured output, no evidence gating, no retries.
 #
-# A good submission will look nothing like this.
+# Your submission should NOT look like a longer version of this file.
+# Throw it out and build your own system.
+# ─────────────────────────────────────────────────────────────────────────────
 
 system: |
-  You are an expert innovation analyst. You will be given a problem statement
-  and a proposed solution. Write a scientific dossier that assesses whether
-  the solution is novel, has breakthrough potential, and is backed by solid
-  evidence. Be rigorous and cite sources where possible.
+  You are an innovation analyst. You will be given a problem statement and a
+  proposed solution. Write a dossier assessing the solution.
 
 user: |
   # Problem
@@ -20,9 +20,4 @@ user: |
   # Proposed solution
   {solution_markdown}
 
-  Write a dossier covering:
-  - Novelty
-  - Breakthrough potential
-  - Evidence quality
-  - Failure modes
-  - Verdict (pass / conditional / fail)
+  Write a dossier.

@@ -29,20 +29,11 @@ See [`images/solution_A_mechanism.png`](images/solution_A_mechanism.png) for the
 ## How it addresses the problem
 
 | Problem aspect | Mechanism | How it solves |
-|---|---|---|
+| --- | --- | --- |
 | Safe removal of plaque from occluded geometry | Selective constituent leaching | Dismantles biofilm *structurally* rather than relying on mechanical scraping or user technique. |
 | Minimizing plaque recurrence and calculus buildup | Enzymatic cleavage of glucan matrix | Hydrolyzes the structural polymer that enables plaque to reaccumulate and mineralize into calculus. |
 | Long-lasting "clean feel" signal | Deep pore penetration | Removes deep biofilm that brushing misses, producing a novel sensory signature. |
 | Meeting the safety envelope | Neutral-pH citrate chelator | Chelates plaque calcium effectively while remaining safe for enamel (unlike acidic chelators like EDTA at low pH). |
-
-## Specifics to verify
-
-- Is calcium cross-linking actually a rate-limiting structural element of plaque biofilm, or a minor contributor relative to glucan–glucan hydrogen bonding and bacterial adhesins?
-- Neutral-pH citrate has a relatively low affinity for Ca²⁺ (log K ≈ 3.5) compared to alternatives. Is the dwell time in the mouth long enough to extract a mechanically relevant fraction of Ca²⁺?
-- Glucanase activity at oral temperatures, pH, and residence times — and its shelf stability in a rinse format.
-- Whether the "osmotic proppant" step has a real-world analog in vivo or is a forced carry-over from hydraulic-fracturing language.
-- Prior art on glucanase-based oral rinses (search enzymatic plaque removal patents — this has been tried).
-- Whether the dezincification analogy holds at the level of relevant bond energies and diffusion timescales, or whether it only holds at the level of metaphor.
 
 ## Visual
 
@@ -50,4 +41,4 @@ See [`images/solution_A_mechanism.png`](images/solution_A_mechanism.png) for the
 
 ---
 
-*Source: Output from the internal transfer pipeline. Raw concept, not yet subjected to expert review.*
+*Source: Raw output from the internal analogy-transfer pipeline. Has not yet been subjected to expert review.*

@@ -28,20 +28,11 @@ See [`images/solution_B_mechanism.png`](images/solution_B_mechanism.png) for the
 ## How it addresses the problem
 
 | Problem aspect | Mechanism | How it solves |
-|---|---|---|
+| --- | --- | --- |
 | Removal between teeth and below gumline | Magnetic field activator | The magnetic field penetrates tissue and interdental gaps, triggering the conformational shift where bristles cannot reach. |
 | Fits existing home hygiene routines | Magneto-responsive rinse | Deposited as a standard rinse — no user dexterity required, activated by a handheld applicator. |
 | Chemically lift and disperse plaque | Coil-to-globule phase transition | The abrupt contraction of the polymer layer mechanically breaks the adhesive bond holding biofilm to enamel. |
 | Minimize re-deposition | Dynamic surface-wettability switch | The locked polymer film remains on the tooth, creating a surface that resists new plaque attachment. |
-
-## Specifics to verify
-
-- Whether any known food-grade magneto-responsive polymer system produces a conformational shift large enough and fast enough to mechanically detach biofilm (vs. merely switching wettability at the Angstrom scale).
-- The force delivered by a consumer-grade handheld magnetic device at the depth of the interdental gap (a few mm through tissue) — likely orders of magnitude below the shear stress required for biofilm removal.
-- Whether the "coil-to-globule" transition in the source literature (which refers to thermo-responsive polymers in solution) has any real mechanistic analog under magnetic actuation in a bound surface film.
-- Whether a persistent polymer "shield" on enamel has any precedent that survived regulatory review, or whether residual films on teeth typically fail on food-interaction, stain, and bacterial-colonization grounds.
-- The number of distinct mechanisms the concept invokes — magnetic actuation, coil-to-globule phase transition, and wettability switching are three separate phenomena, each with its own literature. Are they being combined coherently, or is the concept accreting plausible-sounding physics without a single defensible primary mechanism?
-- Prior art on magnetically activated oral care (search this carefully; it's a recurring idea).
 
 ## Visual
 
@@ -49,4 +40,4 @@ See [`images/solution_B_mechanism.png`](images/solution_B_mechanism.png) for the
 
 ---
 
-*Source: Output from the internal transfer pipeline. Raw concept, not yet subjected to expert review.*
+*Source: Raw output from the internal analogy-transfer pipeline. Has not yet been subjected to expert review.*
