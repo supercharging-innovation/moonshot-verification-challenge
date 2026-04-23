@@ -1,0 +1,18 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+node_modules/
+dist/
+build/
+
+.DS_Store
+.idea/
+.vscode/
+
+# Submissions put their run outputs here
+/output/
