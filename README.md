@@ -1,7 +1,5 @@
 <div align="center">
-  <img src="assets/logo.png" alt="Analogical Engines" width="240" />
-
-  <h1>Verification Challenge</h1>
+  <h1>Analogical Engines · Verification Challenge</h1>
 
   <p><strong>A practical assignment for engineers who want to build rigorous agentic systems.</strong></p>
 
