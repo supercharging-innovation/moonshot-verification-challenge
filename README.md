@@ -61,6 +61,7 @@ Every non-trivial claim in the dossier must trace back to a real source — a pa
 - **LLM-provider agnostic, runtime-configurable.** See [Configuration and provider-agnostic design](#configuration-and-provider-agnostic-design) below.
 - **Bring your own keys.** We do not issue API keys. Your system should read all credentials from environment variables, and your submission's `README.md` should list exactly which env vars we need to set. (A `.env.example` is welcome.)
 - **Reproducible install.** A clean clone and one setup command should run it on a fresh machine.
+- **Production-grade code.** This is not a throwaway script. Write it as you would at a job: clear module structure, sensible separation of concerns, types where they help, error handling where it matters, logs where a future maintainer will want them, no committed secrets, no dead code. We eventually turn the winning architectures into production pipelines — yours may be one of them.
 
 ### Free to choose
 
@@ -157,20 +158,27 @@ A timelapse or walkthrough of you building this — including how you worked wit
 
 ## What we are evaluating you for
 
-We are hiring for **engineering judgment and scientific taste applied to agentic systems**, not for prompt-fluency. Submissions are scored on:
+When we hand an engineer a hard, open-ended problem at Analogical Engines, three meta-skills decide whether they succeed:
+
+1. **Architectural judgment under ambiguity.** When nobody has told you how the pipeline should decompose — agents, tools, checkpoints, retries, structured outputs — can you choose a shape that fits the problem instead of defaulting to a framework's happy path?
+2. **Fluency with modern coding assistants.** Claude Code, Cursor, Codex and their peers are not toys. An engineer who uses them well ships a week of work in a day. An engineer who uses them badly ships plausible-looking code that collapses on second contact. We want to see how you actually work with them — what you delegate, what you review line-by-line, what you throw out.
+3. **A point of view on designing LLM-based systems.** Where do you spend tokens and where do you refuse to? How do you test a probabilistic system? How do you know your agent isn't hallucinating past a silent failure? How do you keep costs sane?
+
+Everything below rolls up to those three. Submissions are scored on:
 
 | What we look for | What we mean |
 | --- | --- |
+| **Architecture under ambiguity** | Is the agent graph chosen for this problem, not borrowed from a tutorial? Do the pieces do work only an agent can do, and nothing else? |
 | **Decision quality** | Would a domain scientist, reading your dossier cold, agree with your GO / NO-GO recommendation on the evidence you presented? |
 | **Evidence rigor** | Are citations real? Do URLs resolve? Do cited papers actually say what the dossier claims they say? |
 | **Mechanism reasoning** | Does the dossier engage with physics and chemistry at the level of order-of-magnitude numbers, not vibes? |
 | **Prior-art handling** | Does the system surface patents, papers, and products that would block, narrow, or kill the concept? |
 | **Failure-mode surfacing** | Does it find the non-obvious failure modes, not just the generic ones? |
 | **Dossier structure** | You chose the structure — does it serve the reader? Does it stand up as a coherent document, or read like a question-by-question form? |
-| **Architectural taste** | Is the agent graph coherent? Are tools used where they earn their cost? Is cost-per-insight sensible? |
+| **Code quality** | Is this production-grade? Would we be comfortable merging it into a real pipeline? |
 | **Provider-agnostic discipline** | Does the system actually work when we swap the model — or does it quietly break? |
-| **Design judgment in `DESIGN.md`** | Does your rationale read like someone who thought, or like someone who followed a recipe? |
-| **Process honesty in `PROCESS.md`** | Do we get a faithful account of how you worked, including what your coding assistant got wrong? |
+| **Coding-assistant fluency (`PROCESS.md`)** | Do we get a faithful, specific account of what your assistant did well, what it got wrong, what bugs you hit, and how you got unstuck? |
+| **LLM-systems judgment (`DESIGN.md`)** | Does your rationale read like someone with a point of view on building these systems, or like someone who followed a recipe? |
 
 Cheap-and-shallow and expensive-and-padded both lose. We want the tightest, most rigorous system you can build — and a faithful account of how you built it.
 
@@ -179,6 +187,14 @@ Cheap-and-shallow and expensive-and-padded both lose. We want the tightest, most
 The files under [`starter/`](starter/) show the simplest possible shape of a one-shot pipeline: read the concept file, read the problem file, format a prompt, make one LLM call. That is all. **It is not a scaffold to build on.** It exists so you can see how the input files are laid out and sanity-check your runtime. Your own system should replace it entirely — different entry point, different structure, different everything.
 
 Do not submit something that looks like a longer version of the starter.
+
+## Why take this challenge
+
+You would be working on one of the harder problems in applied AI right now: getting LLM-based systems to tell the truth about the world under adversarial conditions — adversarial in the sense that the concepts *look* plausible, the citations *look* real, and the physics *looks* right, even when it isn't. The concepts in this challenge are not toy problems. They come straight out of the pipeline we ship to real R&D clients working on real product launches. A good verification dossier is not an academic exercise; it is the thing that determines whether a Fortune-500 client commits months of lab time and millions of dollars.
+
+If you join us, you build the next version of this. You work directly on the system you were evaluated on, ship to real clients, see your work cited in actual stage-gate meetings, and have more leverage on the product than you would anywhere else. We are a small team; you would be one of a handful of engineers who decide what this platform becomes.
+
+If you don't join us — because the fit isn't right, or because you take something else — you still walk away with a rigorous agentic system in your portfolio, a screen recording of you using modern coding assistants at their best, and a concrete point of view on how LLM-based systems should be designed. That's worth the weekend by itself.
 
 ## How to apply
 
