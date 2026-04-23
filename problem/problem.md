@@ -25,6 +25,8 @@ A system must chemically or physically detach and disperse **resilient, self-ren
 
 These are real numbers the client's formulation scientists will cite. Any proposed mechanism that violates them is dead on arrival.
 
+> **Before moving past this section, internalize this number.** Biofilm removal requires **≥45 Pa** of wall shear stress. A normal mouth-rinse generates **~0.02–0.076 Pa**. That is a **500–2000× gap**, and it is the single most common place where concepts in this space collapse on contact with physics. Any concept that relies on mechanical force at the interdental gap has to explain, quantitatively, how it closes that gap — confinement, jamming, pressure amplification, something. Concepts that clean chemically rather than mechanically do not have to close the gap, but then they owe the reader a credible chemical story instead.
+
 - **Biofilm shear-stress threshold.** Significant plaque removal requires **≥45 Pa** of wall shear stress; complete removal ~**135 Pa** (Hotić et al. 2024 and related biofilm rheology literature). Verify this yourself.
 - **Swishing baseline.** Normal mouth-rinsing generates only **~0.02–0.076 Pa** of wall shear stress. A 500–2000× gap. Any solution that relies on rinse hydrodynamics alone needs an amplification mechanism.
 - **Particle grittiness threshold.** Particles larger than ~50 μm at volume fractions above ~50% feel gritty and get rejected by consumers. This is a sensory / compliance constraint, not a physics one, but it kills products.
